@@ -1,0 +1,25 @@
+name: Preview CDK on PR
+on: 
+  pull_request:
+    branches:
+      - main
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    environment: dev
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4.2.2
+      - uses: denoland/setup-deno@v2
+        with:
+          deno-version: v1.2.1
+      - run: deno install
+      - uses: aws-actions/configure-aws-credentials@v4.0.2
+        with:
+          role-to-assume: ${{vars.AWS_OIDC_ROLE_ARN}}
+          aws-region: us-east-1
+      - run: ENV="pr-$PR_NUMBER" deno task cdk deploy --require-approval never
+        env:
+          PR_NUMBER: ${{ github.event.number }}
