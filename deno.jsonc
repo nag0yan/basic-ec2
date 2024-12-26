@@ -1,0 +1,15 @@
+{
+  "tasks": {
+    "cdk": "deno run -A npm:aws-cdk@^2.165.0",
+    "detect": "gitleaks detect -v --no-git --no-banner",
+    "format": "deno fmt",
+    "test": "deno test",
+    "pc": "deno task detect && deno task format && deno task test"
+  },
+  "imports": {
+    "aws-cdk": "npm:aws-cdk@^2.165.0",
+    "aws-cdk-lib": "npm:aws-cdk-lib@^2.165.0",
+    "constructs": "npm:constructs@^10.4.2"
+  },
+  "exclude": ["cdk.out"]
+}

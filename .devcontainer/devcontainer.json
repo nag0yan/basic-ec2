@@ -1,0 +1,30 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+{
+  "name": "Ubuntu",
+  "image": "mcr.microsoft.com/devcontainers/base:noble",
+  "features": {
+    "ghcr.io/devcontainers/features/aws-cli:1.1.0": {},
+    "ghcr.io/devcontainers/features/github-cli:1.0.13": {},
+    "ghcr.io/devcontainers-community/features/deno:1.2.1": {},
+    "ghcr.io/devcontainers-extra/features/act:1.0.14": {},
+    "ghcr.io/devcontainers-extra/features/actionlint:1.0.6": {},
+    "ghcr.io/jsburckhardt/devcontainer-features/gitleaks:1.0.0": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "GitHub.copilot",
+        "github.vscode-github-actions"
+      ]
+    }
+  },
+  "mounts": [
+    {
+      "source": "cdk-template-dev",
+      "target": "/home/vscode/.aws",
+      "type": "volume"
+    }
+  ],
+  "postCreateCommand": "sudo chown -R vscode:vscode /home/vscode/.aws"
+}
