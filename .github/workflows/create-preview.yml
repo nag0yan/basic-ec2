@@ -5,10 +5,11 @@ on:
       - main
     types:
       - labeled
+      - synchronize
 
 jobs:
   preview:
-    if: ${{ github.event.label.name == 'preview' }}
+    if: ${{ (github.event.action == 'labeled' && github.event.label.name == 'preview') || (github.event.action == 'synchronize' && contains(github.event.pull_request.labels.*.name, 'preview')) }}
     runs-on: ubuntu-latest
     environment: dev
     permissions:
