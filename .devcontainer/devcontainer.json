@@ -9,7 +9,8 @@
     "ghcr.io/devcontainers-community/features/deno:1.2.1": {},
     "ghcr.io/devcontainers-extra/features/act:1.0.14": {},
     "ghcr.io/devcontainers-extra/features/actionlint:1.0.6": {},
-    "ghcr.io/jsburckhardt/devcontainer-features/gitleaks:1.0.0": {}
+    "ghcr.io/jsburckhardt/devcontainer-features/gitleaks:1.0.0": {},
+    "ghcr.io/christophermacgown/devcontainer-features/direnv:1.0.1": {}
   },
   "customizations": {
     "vscode": {
