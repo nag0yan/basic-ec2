@@ -15,7 +15,6 @@ jobs:
       - uses: denoland/setup-deno@v2
         with:
           deno-version: v1.2.1
-      - run: deno install
       - uses: aws-actions/configure-aws-credentials@v4.0.2
         with:
           role-to-assume: ${{vars.AWS_OIDC_ROLE_ARN}}
