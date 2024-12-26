@@ -1,15 +1,16 @@
 {
   "version": "4",
   "specifiers": {
-    "npm:aws-cdk-lib@^2.165.0": "2.165.0_constructs@10.4.2",
+    "npm:aws-cdk-lib@^2.173.2": "2.173.2_constructs@10.4.2",
     "npm:aws-cdk@*": "2.164.1",
     "npm:aws-cdk@^2.165.0": "2.165.0",
+    "npm:aws-cdk@^2.173.2": "2.173.2",
     "npm:cdk@*": "2.165.0",
     "npm:constructs@^10.4.2": "10.4.2"
   },
   "npm": {
-    "@aws-cdk/asset-awscli-v1@2.2.210": {
-      "integrity": "sha512-yxuGP52ZtdAGkcAik5mW79FKKv6yvc5QuCZbsKMyICk48alqs+ni7Iv2UnuGLkVSLh09+ixoHHu4o5rIv8X9jg=="
+    "@aws-cdk/asset-awscli-v1@2.2.216": {
+      "integrity": "sha512-ZOMSDRZNTshIGUsq7FWxzlC/rb05rHbb7eX7v9L5+JheMWxnjfP9Bfjisl45jeYtZKYbDM6IgE4GuX5LZ15Ptg=="
     },
     "@aws-cdk/asset-kubectl-v20@2.1.3": {
       "integrity": "sha512-cDG1w3ieM6eOT9mTefRuTypk95+oyD7P5X/wRltwmYxU7nZc3+076YEVS6vrjDKr3ADYbfn0lDKpfB1FBtO9CQ=="
@@ -48,8 +49,8 @@
     "astral-regex@2.0.0": {
       "integrity": "sha512-Z7tMw1ytTXt5jqMcOP+OQteU1VuNK9Y02uuJtKQ1Sv69jXQKKg5cibLwGJow8yzZP+eAc18EmLGPal0bp36rvQ=="
     },
-    "aws-cdk-lib@2.165.0_constructs@10.4.2": {
-      "integrity": "sha512-jCIUcaNDhAO/Yxik29L2LJiXkZImbEOlw/dWwhlcIx1eJyxUW+IWuMbGjXEMg8/QH56FBA5TLkZpTTsRstHS/Q==",
+    "aws-cdk-lib@2.173.2_constructs@10.4.2": {
+      "integrity": "sha512-cL9+z8Pl3VZGoO7BwdsrFAOeud/vSl3at7OvmhihbNprMN15XuFUx/rViAU5OI1m92NbV4NBzYSLbSeCwYLNyw==",
       "dependencies": [
         "@aws-cdk/asset-awscli-v1",
         "@aws-cdk/asset-kubectl-v20",
@@ -77,6 +78,12 @@
     },
     "aws-cdk@2.165.0": {
       "integrity": "sha512-9j7i/qVBGmGJqu1xAKtawYo5AqI+6mI4pGmTdzNmrNfynDCrLVuVKSqf2LnhMh2KPWetEMiSPyyekfvXGWgZbw==",
+      "dependencies": [
+        "fsevents"
+      ]
+    },
+    "aws-cdk@2.173.2": {
+      "integrity": "sha512-qyMU4FoRJdZDUpsOBqyRBALBjf5A2N/MaHKX9iJUkbTET+d+nR07x3ai4TcEES+8pqPFHMTKpQMRDXs9Py/15w==",
       "dependencies": [
         "fsevents"
       ]
@@ -206,8 +213,8 @@
         "ansi-regex"
       ]
     },
-    "table@6.8.2": {
-      "integrity": "sha512-w2sfv80nrAh2VCbqR5AK27wswXhqcck2AhfnNW76beQXskGZ1V12GwS//yYVa3d3fcvAip2OUnbDAjW2k3v9fA==",
+    "table@6.9.0": {
+      "integrity": "sha512-9kY+CygyYM6j02t5YFHbNz2FN5QmYGv9zAjVp4lCDjlCw7amdckXlEt/bjMhUIfj4ThGRE4gCUH5+yGnNuPo5A==",
       "dependencies": [
         "ajv",
         "lodash.truncate",
@@ -276,8 +283,8 @@
   },
   "workspace": {
     "dependencies": [
-      "npm:aws-cdk-lib@^2.165.0",
-      "npm:aws-cdk@^2.165.0",
+      "npm:aws-cdk-lib@^2.173.2",
+      "npm:aws-cdk@^2.173.2",
       "npm:constructs@^10.4.2"
     ]
   }
