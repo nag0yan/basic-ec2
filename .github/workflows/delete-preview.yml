@@ -19,6 +19,6 @@ jobs:
         with:
           role-to-assume: ${{vars.AWS_OIDC_ROLE_ARN}}
           aws-region: us-east-1
-      - run: ENV="pr-$PR_NUMBER" deno task cdk destroy --all --force
+      - run: ENV="pr-$PR_NUMBER" deno run -A npm:aws-cdk@^2.173.2 destroy --all --force
         env:
           PR_NUMBER: ${{ github.event.number }}
