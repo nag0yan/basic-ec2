@@ -1,6 +1,6 @@
 import {
-	GithubActionsIdentityProvider,
-	GithubActionsRole,
+  GithubActionsIdentityProvider,
+  GithubActionsRole,
 } from "aws-cdk-github-oidc";
 import { Duration, Stack, type StackProps } from "aws-cdk-lib";
 import * as iam from "aws-cdk-lib/aws-iam";
@@ -12,35 +12,39 @@ export interface GithubActionsOidcStackProps extends StackProps {
 }
 
 export class GithubActionsOidcStack extends Stack {
-	constructor(scope: Construct, id: string, props: GithubActionsOidcStackProps) {
-		super(scope, id, props);
+  constructor(
+    scope: Construct,
+    id: string,
+    props: GithubActionsOidcStackProps,
+  ) {
+    super(scope, id, props);
 
-		const provider = new GithubActionsIdentityProvider(this, "GithubProvider")
-		const role = new GithubActionsRole(this, "DeployRole", {
+    const provider = new GithubActionsIdentityProvider(this, "GithubProvider");
+    const role = new GithubActionsRole(this, "DeployRole", {
       roleName: `${props.owner}/${props.repo}/cdk-deploy-role`,
-			provider: provider,
-			owner: props.owner,
-			repo: props.repo,
-			maxSessionDuration: Duration.hours(2),
-		});
+      provider: provider,
+      owner: props.owner,
+      repo: props.repo,
+      maxSessionDuration: Duration.hours(2),
+    });
 
-		role.addToPolicy(
-			iam.PolicyStatement.fromJson({
-				Sid: "AssumeCDKRoles",
-				Effect: "Allow",
-				Action: "sts:AssumeRole",
-				Resource: "*",
-				Condition: {
-					"ForAnyValue:StringEquals": {
-						"iam:ResourceTag/aws-cdk:bootstrap-role": [
-							"image-publishing",
-							"file-publishing",
-							"deploy",
-							"lookup",
-						],
-					},
-				},
-			}),
-		);
-	}
+    role.addToPolicy(
+      iam.PolicyStatement.fromJson({
+        Sid: "AssumeCDKRoles",
+        Effect: "Allow",
+        Action: "sts:AssumeRole",
+        Resource: "*",
+        Condition: {
+          "ForAnyValue:StringEquals": {
+            "iam:ResourceTag/aws-cdk:bootstrap-role": [
+              "image-publishing",
+              "file-publishing",
+              "deploy",
+              "lookup",
+            ],
+          },
+        },
+      }),
+    );
+  }
 }
