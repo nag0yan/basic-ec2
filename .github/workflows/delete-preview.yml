@@ -3,8 +3,10 @@ on:
   pull_request:
     types:
       - closed
+      - unlabeled
 jobs:
   preview:
+    if: ${{ github.event.action == 'closed' || github.event.label.name == 'preview' }}
     runs-on: ubuntu-latest
     environment: dev
     permissions:
