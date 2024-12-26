@@ -6,7 +6,7 @@ export class SampleStack extends cdk.Stack {
     super(scope, id, props);
 
     new cdk.CfnOutput(this, "SampleOutput", {
-      value: "Hello World, CDK!!",
+      value: "Hello World, CDK!!!",
     });
   }
 }
