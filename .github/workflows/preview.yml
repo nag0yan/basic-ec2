@@ -3,8 +3,12 @@ on:
   pull_request:
     branches:
       - main
+    types:
+      - labeled
+
 jobs:
   preview:
+    if: ${{ github.event.label.name == 'preview' }}
     runs-on: ubuntu-latest
     environment: dev
     permissions:
