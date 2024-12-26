@@ -4,6 +4,7 @@
     "npm:aws-cdk-lib@^2.165.0": "2.173.2_constructs@10.4.2",
     "npm:aws-cdk@*": "2.164.1",
     "npm:aws-cdk@^2.165.0": "2.165.0",
+    "npm:aws-cdk@^2.173.2": "2.173.2",
     "npm:cdk@*": "2.165.0",
     "npm:constructs@^10.4.2": "10.4.2"
   },
@@ -77,6 +78,12 @@
     },
     "aws-cdk@2.165.0": {
       "integrity": "sha512-9j7i/qVBGmGJqu1xAKtawYo5AqI+6mI4pGmTdzNmrNfynDCrLVuVKSqf2LnhMh2KPWetEMiSPyyekfvXGWgZbw==",
+      "dependencies": [
+        "fsevents"
+      ]
+    },
+    "aws-cdk@2.173.2": {
+      "integrity": "sha512-qyMU4FoRJdZDUpsOBqyRBALBjf5A2N/MaHKX9iJUkbTET+d+nR07x3ai4TcEES+8pqPFHMTKpQMRDXs9Py/15w==",
       "dependencies": [
         "fsevents"
       ]
@@ -276,8 +283,8 @@
   },
   "workspace": {
     "dependencies": [
-      "npm:aws-cdk-lib@^2.165.0",
-      "npm:aws-cdk@^2.165.0",
+      "npm:aws-cdk-lib@^2.173.2",
+      "npm:aws-cdk@^2.173.2",
       "npm:constructs@^10.4.2"
     ]
   }
